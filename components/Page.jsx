@@ -13,7 +13,7 @@ const Page = ({ title, children }) => {
         { href: '/', label: 'Сырьевые товары' },
         { href: '/', label: 'Криптовалюты' },
         { href: '/stock', label: 'Акции' },
-        { href: '/', label: 'Облигации' },
+        { href: '/bond', label: 'Облигации' },
         { href: '/', label: 'ETF' },
         { href: '/', label: 'Фонды' },
     ]
