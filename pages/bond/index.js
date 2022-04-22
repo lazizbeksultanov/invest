@@ -4,21 +4,16 @@ import Ad from "../../components/Ad";
 import Block from "../../components/Block";
 import Table from "../../components/Table";
 import styles from "../../styles/Home.module.scss";
-import News from "../../components/News";
-import Opnion from "../../components/Opnion";
-import AdNews from "../../components/AdNews";
-import Image from "next/image";
 import Tabs from "../../components/Tabs";
-import Diogram from "../../components/Diogram";
 import RightBlock from "../../components/RightBlock";
-import Webinar from "../../components/Webinar";
 import TwoBlocks from "../../components/TwoBlocks";
 import TwoTitles from "../../components/TwoTitles";
 import {fetchValuteRating} from "../../data/Valute";
 import {fetchCryptoRating} from "../../data/Crypto";
 import Charts from "../../components/Charts";
 import ArrowIcon from "../../public/icons/icons";
-import Stocks from "../../components/stocks";
+import Prognosis from "../../components/Prognosis";
+import SearchIcon from "../../public/icons/SearchIcon";
 
 export default function Bond() {
     const [ isTablet, setIsTablet ] = useState(false)
@@ -56,6 +51,40 @@ export default function Bond() {
 
             <TwoBlocks>
                 <>
+                    <Block>
+                        <TwoTitles>
+                            <h2 className="title">Государственные облигации</h2>
+                            <h2 className="title">Поиск по фильтрам</h2>
+                        </TwoTitles>
+                        <div className={"filter-group"}>
+                            <div>
+                                <span className={"select__title"}>СТРАНА</span>
+                                <select className={"select-option"}>
+                                    <option>Россия</option>
+                                    <option>США</option>
+                                    <option>Китай</option>
+                                    <option>Канада</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span className={"select__title"}>СРОК ПОГЕШЕНИЯ</span>
+                                <select className={"select-option"}>
+                                    <option>10.04.2022</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span className={"select__title"}>ДО</span>
+                                <select className={"select-option"}>
+                                    <option>10.04.2022</option>
+                                </select>
+                                <span>
+                                    <button style={{outline: "none", border: "none", background: "#fff", cursor: "pointer"}}>
+                                        <SearchIcon />
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </Block>
                     <Block>
                         <h2 className="title">График доходности облигаций за 10 лет</h2>
                         <div className="barChart_div">
@@ -205,6 +234,10 @@ export default function Bond() {
                         </Tabs>
                     </RightBlock>
 
+                    <RightBlock title={"Прогноз по ставке ФРС"}>
+                        <Prognosis manyForecast={80} />
+                    </RightBlock>
+
                     <RightBlock>
                         <Tabs>
                             <div>
@@ -279,31 +312,6 @@ export default function Bond() {
                             tables={[
                                 ['-Нефть Brent', '4 418 ₽ ', '+1%'],
                             ]} />
-                    </RightBlock>
-                    <RightBlock title="Лидеры роста/падения">
-                        <Tabs>
-                            <div>
-                                <h5>
-                                    активные
-                                </h5>
-                                <>
-                                    <Table
-                                        width="39%"
-                                        className={styles.smailtable}
-                                        columns={['название', 'цена', 'изм.', 'изм%']}
-                                        tables={[
-                                            ['-Нефть Brent', '4 418 ₽ ', '+1%', '+1%'],
-                                        ]} /></>
-                            </div>
-                            <div>
-                                <h5>рост</h5>
-                                <></>
-                            </div>
-                            <div>
-                                <h5>падение</h5>
-                                <></>
-                            </div>
-                        </Tabs>
                     </RightBlock>
                     <Block className={styles.ad}>
                         <Ad width="100%" height="500px" />

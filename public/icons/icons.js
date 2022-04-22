@@ -4,4 +4,4 @@ export default function ArrowIcon () {
             <path d="M1 1L5.33333 8L10 1" stroke="#433532"/>
         </svg>
     )
-}
+};

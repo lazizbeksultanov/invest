@@ -159,6 +159,26 @@ h5.right_title:hover{
   text-align: center;
   margin: 14px 0;
 }
+.filter-group{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.select__title{
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.select-option{
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  width: 100px;
+  font-family: Montserrat;
+  font-weight: 400;
+  color: #433532;
+}
 
 @media screen and (max-width: 1000px) {
   .container {
