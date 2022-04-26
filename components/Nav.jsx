@@ -1,6 +1,7 @@
 import styles from '../styles/Nav.module.scss'
+import {useState} from "react";
 
-const Nav = () => {
+const Nav = (isOpen) => {
   return (
     <nav className={styles.nav}>
       <div className={"container " + styles.nav__container}>

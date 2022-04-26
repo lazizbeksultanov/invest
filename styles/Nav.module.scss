@@ -81,6 +81,9 @@
 }
 
 @media screen and (max-width: 550px) {
+  .hamburgerMain{
+    display: block;
+  }
   .nav__input {
     display: none;
   }

@@ -51,6 +51,10 @@ button:focus {
   width: 940px;
   margin: auto;
 }
+.containerNav{
+  width: 940px;
+  margin: auto;
+}
 
 .flex {
   display: flex;
@@ -184,10 +188,16 @@ h5.right_title:hover{
   .container {
     width: 738px;
   }
+  .containerNav{
+    width: 738px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .container {
+    width: 520px;
+  }
+  .containerNav{
     width: 520px;
   }
 
@@ -210,5 +220,9 @@ h5.right_title:hover{
   }
   h5.right_title {
     font-size: 17px;
+  }
+  .containerNav{
+    width: auto;
+    margin: 0 16px;
   }
 }

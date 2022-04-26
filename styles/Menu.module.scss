@@ -20,5 +20,9 @@
       visibility: hidden;
       display: none;
   }
-  
+}
+@media screen and (max-width: 550px) {
+  .menu__nav{
+    display: none;
+  }
 }
