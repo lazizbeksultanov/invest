@@ -213,7 +213,7 @@ h5.right_title:hover{
 
 @media screen and (max-width: 550px) {
   .container {
-    width: 290px;
+    width: 90%;
   }
 
   h2.title {
@@ -224,6 +224,6 @@ h5.right_title:hover{
   }
   .containerNav{
     width: auto;
-    margin: 0 16px;
+    margin: 0 16px 0 58px;
   }
 }

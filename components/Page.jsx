@@ -63,7 +63,7 @@ const Page = ({title, children}) => {
                 </div>
                 <div className={styles.resMenuLinks}>
                     {links ? links.map(link => (
-                        <Link href={link.href}>
+                        <Link href={link.href} key={link.label}>
                             <a onClick={() => setIsOpen(!isOpen)}>{link.label}</a>
                         </Link>
                     )) : ""}

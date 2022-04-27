@@ -21,7 +21,7 @@ const Prognosis = ({ manyForecast, title, children }) => {
                     </div>
                     <p className={styles.diagram__desc}>0,00-0,25</p>
                 </div>
-                <div className={styles.right} style={{width: `${manyForecast}`}} >
+                <div className={styles.right} style={{width: `${manyForecast}%`}} >
                     <div className={styles.right__diagram}>
                         {manyForecast} %
                     </div>

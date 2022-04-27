@@ -8,7 +8,7 @@ export default function Menu(links) {
             <nav className={styles.menu__nav}>
                 {links ?
                     links.links.map(link => (
-                        <Link href={link.href} key={link.href}>
+                        <Link href={link.href} key={link.label}>
                             <a>{link.label}</a>
                         </Link>
                     ))
