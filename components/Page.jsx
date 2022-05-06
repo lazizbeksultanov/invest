@@ -9,7 +9,7 @@ import Link from 'next/link'
 const Page = ({title, children}) => {
     const links = [
         {href: '/', label: 'Обзор'},
-        {href: '/', label: 'Индексы'},
+        {href: '/indices', label: 'Индексы'},
         {href: '/', label: 'Индексные фьючерсы'},
         {href: '/invest', label: 'Форекс'},
         {href: '/', label: 'Сырьевые товары'},

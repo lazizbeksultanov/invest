@@ -2,6 +2,7 @@
   flex: 1 0 auto;
 }
 .responsiveMenu{
+  display: none;
   position: fixed;
   margin-top: 79px;
   width: 85%;
@@ -13,6 +14,7 @@
   animation-duration: 0.5s;
 }
 .responsiveMenuBack{
+  display: none;
   position: fixed;
   margin-top: 79px;
   width: 85%;
@@ -118,6 +120,12 @@
   }
   .main{
     margin-top: 50px;
+  }
+  .responsiveMenu{
+    display: block;
+  }
+  .responsiveMenuBack{
+    display: block;
   }
 }
 
