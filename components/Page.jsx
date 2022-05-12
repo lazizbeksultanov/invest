@@ -12,12 +12,12 @@ const Page = ({title, children}) => {
         {href: '/indices', label: 'Индексы'},
         {href: '/', label: 'Индексные фьючерсы'},
         {href: '/invest', label: 'Форекс'},
-        {href: '/', label: 'Сырьевые товары'},
+        {href: '/commodities', label: 'Сырьевые товары'},
         {href: '/', label: 'Криптовалюты'},
         {href: '/stock', label: 'Акции'},
         {href: '/bond', label: 'Облигации'},
-        {href: '/', label: 'ETF'},
-        {href: '/', label: 'Фонды'},
+        {href: '/etfs', label: 'ETF'},
+        {href: '/funds', label: 'Фонды'},
     ]
     const [isOpen, setIsOpen] = useState(false)
     return (

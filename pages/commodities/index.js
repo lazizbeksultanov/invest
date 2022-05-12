@@ -1,0 +1,238 @@
+import {useEffect, useState} from "react";
+import Page from "../../components/Page";
+import Ad from "../../components/Ad";
+import Block from "../../components/Block";
+import Table from "../../components/Table";
+import styles from "../../styles/Home.module.scss";
+import Tabs from "../../components/Tabs";
+import RightBlock from "../../components/RightBlock";
+import TwoBlocks from "../../components/TwoBlocks";
+import TwoTitles from "../../components/TwoTitles";
+import {fetchValuteRating} from "../../data/Valute";
+import {fetchCryptoRating} from "../../data/Crypto";
+import Charts from "../../components/Charts";
+import ArrowIcon from "../../public/icons/icons";
+import Prognosis from "../../components/Prognosis";
+import SearchIcon from "../../public/icons/SearchIcon";
+
+export default function Bond() {
+    const [ isTablet, setIsTablet ] = useState(false)
+    const [ isMobile, setIsMobile ] = useState(false)
+    const [ liveTime, setliveTime ] = useState(true)
+    const [ valuteServerData, setValuteServerData ] = useState(null)
+    const [ isValuteDataLoading, setIsValuteDataLoading ] = useState(true)
+    const [ cryptoServerData, setCryptoServerData ] = useState(null)
+    const [ isCryptoDataLoading, setIsCryptoDataLoading ] = useState(true)
+
+    useEffect(() => {
+        let cleanupFunction = false
+
+        if (window.screen.width <= 768) if (!cleanupFunction) setIsTablet(true)
+        if (window.screen.width <= 550) if (!cleanupFunction) setIsMobile(true)
+
+        return () => cleanupFunction = true
+    }, [])
+
+    useEffect(() => {
+        let cleanupFunction = false
+
+        fetchValuteRating(setValuteServerData, setIsValuteDataLoading, isMobile, liveTime)
+        fetchCryptoRating(setCryptoServerData, setIsCryptoDataLoading, isMobile)
+
+        return () => cleanupFunction = true
+    }, [isMobile])
+
+
+    return(
+        <Page title="Сырьевые товары">
+            <Block>
+                <Ad width="100%" height="275px" />
+            </Block>
+
+            <TwoBlocks>
+                <>
+                    <Block>
+                        <Block>
+                            <Block>
+                                <TwoTitles>
+                                    <h2 className="title">Таблица показателей</h2>
+                                    <h5 className="right_title">ПРОЦЕНТ ИЗМЕНЕНИЯ <span><ArrowIcon/></span></h5>
+                                </TwoTitles>
+                                <span className="date">11.02.22</span>
+                                <Table
+                                    width={isMobile ? '40%' : '20%'}
+                                    className={styles.maxwidth} type={isMobile ? '' : '1'}
+                                    columns={isMobile ? ['пара', 'цена', 'изменение'] : ['пара', 'цена', 'изменение', 'изменение %']}
+                                    tables={isValuteDataLoading ? isMobile ? [
+                                                ['usd/rub', '???', '-?? %']
+                                            ]
+                                            : [
+                                                ['usd/rub', '???', '-?? ₽', '-?? %']
+                                            ]
+                                        : valuteServerData} />
+                            </Block>
+                        </Block>
+                    </Block>
+                    <Block>
+                        <h2 className="title">График показателей ведущих фондов</h2>
+                        <div className="barChart_div">
+                            <Charts type='bar' />
+                        </div>
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                    <Block>
+                        <h2 className="title">Сырьевые индексы</h2>
+                        <span className="date">11.02.22</span>
+                        <Table
+                            width={isMobile ? '40%' : '20%'}
+                            className={styles.maxwidth} type={isMobile ? '' : '1'}
+                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
+                            tables={isValuteDataLoading ? isMobile ? [
+                                        ['usd/rub', '???', '-?? %']
+                                    ]
+                                    : [
+                                        ['usd/rub', '???', '-?? ₽', '-?? %']
+                                    ]
+                                : valuteServerData} />
+                    </Block>
+                </>
+
+                <>
+                    <RightBlock>
+                        <Tabs>
+                            <div>
+                                <h5>ТОВАРЫ</h5>
+                                <>
+                                    <div>
+                                        <div className="select">
+                                            <select>
+                                                <option>1Д</option>
+                                                <option>1Н</option>
+                                                <option>1М</option>
+                                            </select>
+                                        </div>
+                                        <div className="charts">
+                                            <Charts type="line" />
+                                        </div>
+                                    </div>
+                                    <div className="products__card">
+                                        <h5>Товары</h5>
+                                        <Table
+                                            width="39%"
+                                            className={styles.smailtable}
+                                            columns={['название', 'цена', 'курс (24Ч)']}
+                                            tables={[
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                                ['Золото', '4 418 ₽ ', '+1%'],
+                                            ]} />
+                                    </div>
+                                </>
+                            </div>
+                            <div>
+                                <h5>ФОРЕКС</h5>
+                                <></>
+                            </div>
+                            <div>
+                                <h5>ИНДЕКСЫ</h5>
+                                <></>
+                            </div>
+                            <div>
+                                <h5>АКЦИИ</h5>
+                                <></>
+                            </div>
+                        </Tabs>
+                    </RightBlock>
+
+                    <Block className={styles.ad}>
+                        <Ad width="100%" height="500px" />
+                    </Block>
+                    <Block className={styles.ad}>
+                        <Ad width="100%" height="500px" />
+                    </Block>
+                    <Block className={styles.ad}>
+                        <Ad width="100%" height="500px" />
+                    </Block>
+                </>
+            </TwoBlocks>
+        </Page>
+    )
+}
