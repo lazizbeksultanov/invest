@@ -10,7 +10,7 @@ const Page = ({title, children}) => {
     const links = [
         {href: '/', label: 'Обзор'},
         {href: '/indices', label: 'Индексы'},
-        {href: '/', label: 'Индексные фьючерсы'},
+        {href: '/indices-futures', label: 'Индексные фьючерсы'},
         {href: '/invest', label: 'Форекс'},
         {href: '/commodities', label: 'Сырьевые товары'},
         {href: '/crypto', label: 'Криптовалюты'},

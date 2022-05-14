@@ -44,46 +44,15 @@ export default function Bond() {
 
 
     return(
-        <Page title="Сырьевые товары">
-            <Block>
-                <Ad width="100%" height="275px" />
-            </Block>
+        <Page title="Индексные фьючерсы">
 
             <TwoBlocks>
                 <>
                     <Block>
-                        <Block>
-                            <Block>
-                                <TwoTitles>
-                                    <h2 className="title">Таблица показателей</h2>
-                                    <h5 className="right_title">ПРОЦЕНТ ИЗМЕНЕНИЯ <span><ArrowIcon/></span></h5>
-                                </TwoTitles>
-                                <span className="date">11.02.22</span>
-                                <Table
-                                    width={isMobile ? '40%' : '20%'}
-                                    className={styles.maxwidth} type={isMobile ? '' : '1'}
-                                    columns={isMobile ? ['пара', 'цена', 'изменение'] : ['пара', 'цена', 'изменение', 'изменение %']}
-                                    tables={isValuteDataLoading ? isMobile ? [
-                                                ['usd/rub', '???', '-?? %']
-                                            ]
-                                            : [
-                                                ['usd/rub', '???', '-?? ₽', '-?? %']
-                                            ]
-                                        : valuteServerData} />
-                            </Block>
-                        </Block>
+                        <h2 className="title">Индексные фьючерсы</h2>
                     </Block>
                     <Block>
-                        <h2 className="title">График показателей (%)</h2>
-                        <div className="barChart_div">
-                            <Charts type='bar' />
-                        </div>
-                    </Block>
-                    <Block>
-                        <h2 className="title">Сырьевые товары в режиме реального времени</h2>
-                    </Block>
-                    <Block>
-                        <h2 className="title">Энергетика</h2>
+                        <h5 className="title" style={{fontWeight: "600", marginBottom: "20px"}}>Котировки фьючерсов (CFD) в режиме реального времени</h5>
                         <span className="date">11.02.22</span>
                         <Table
                             width={isMobile ? '40%' : '20%'}
@@ -98,7 +67,7 @@ export default function Bond() {
                                 : valuteServerData} />
                     </Block>
                     <Block>
-                        <h2 className="title">Металлы</h2>
+                        <h5 className="title" style={{fontWeight: "600", marginBottom: "20px"}}>Котировки фьючерсов США</h5>
                         <span className="date">11.02.22</span>
                         <Table
                             width={isMobile ? '40%' : '20%'}
@@ -113,7 +82,7 @@ export default function Bond() {
                                 : valuteServerData} />
                     </Block>
                     <Block>
-                        <h2 className="title">Сельское хозяйство</h2>
+                        <h5 className="title" style={{fontWeight: "600", marginBottom: "20px"}}>Котировки фьючерсов на EUREX</h5>
                         <span className="date">11.02.22</span>
                         <Table
                             width={isMobile ? '40%' : '20%'}
@@ -127,21 +96,7 @@ export default function Bond() {
                                     ]
                                 : valuteServerData} />
                     </Block>
-                    <Block>
-                        <h2 className="title">Сырьевые индексы</h2>
-                        <span className="date">11.02.22</span>
-                        <Table
-                            width={isMobile ? '40%' : '20%'}
-                            className={styles.maxwidth} type={isMobile ? '' : '1'}
-                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
-                            tables={isValuteDataLoading ? isMobile ? [
-                                        ['usd/rub', '???', '-?? %']
-                                    ]
-                                    : [
-                                        ['usd/rub', '???', '-?? ₽', '-?? %']
-                                    ]
-                                : valuteServerData} />
-                    </Block>
+
                 </>
 
                 <>
@@ -194,13 +149,45 @@ export default function Bond() {
                             </div>
                         </Tabs>
                     </RightBlock>
+                    <RightBlock title="Просмотренные котировки">
+                        <Table
+                            width="39%"
+                            className={styles.smailtable}
+                            columns={['название', 'цена', "Изм.%", 'ОбЪем']}
+                            tables={[
+                                ['-Нефть Brent', '4 418 ₽ ', '+1%', '+1%'],
+                            ]} />
+                    </RightBlock>
+                    <RightBlock title="Лидеры роста/падения">
+                        <Tabs>
+                            <div>
+                                <h5>
+                                    активные
+                                </h5>
+                                <>
+                                    <Table
+                                        width="39%"
+                                        className={styles.smailtable}
+                                        columns={['название', 'цена', 'изм.', 'изм%']}
+                                        tables={[
+                                            ['Сбербанк', '4 418 ₽ ', '+1%', '22.84M'],
+                                            ['Газпром', '4 418 ₽ ', '+1%', '22.84M'],
+                                            ['НОВАТЭК', '4 418 ₽ ', '+1%', '22.84M'],
+                                            ['ЛУКОЙЛ', '4 418 ₽ ', '+1%', '22.84M'],
+                                            ['TCS Group H...', '4 418 ₽ ', '+1%', '22.84M'],
+                                        ]} /></>
+                            </div>
+                            <div>
+                                <h5>рост</h5>
+                                <></>
+                            </div>
+                            <div>
+                                <h5>падение</h5>
+                                <></>
+                            </div>
+                        </Tabs>
+                    </RightBlock>
 
-                    <Block className={styles.ad}>
-                        <Ad width="100%" height="500px" />
-                    </Block>
-                    <Block className={styles.ad}>
-                        <Ad width="100%" height="500px" />
-                    </Block>
                 </>
             </TwoBlocks>
         </Page>
