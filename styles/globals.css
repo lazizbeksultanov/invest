@@ -304,6 +304,60 @@ h5.right_title:hover{
   font-weight: 600;
 }
 
+.cryptoAdBlock{
+  display: flex;
+  width: 100%;
+  height: 180px;
+  justify-content: space-between;
+  border-top: 1px solid #CACACA;
+  border-bottom: 1px solid #CACACA;
+  margin-bottom: 50px;
+}
+.cryptoAdBlock .cryptoAdBlock_first{
+  width: 29%;
+  font-size: 14px;
+}
+.cryptoAdBlock .cryptoAdBlock_first a{
+  margin: 10px 0;
+}
+.cryptoAdBlock .cryptoAdBlock_first span{
+  font-size: 13px;
+}
+.cryptoAdBlock .cryptoAdBlock_first .cryptoAdBlock_first__titleBlock{
+  margin: 10px 0;
+}
+.cryptoAdBlock .cryptoAdBlock_second{
+  width: 69%;
+}
+.cryptoAdBlock .cryptoAdBlock__container{
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+}
+.cryptoAdBlock_first__buttons{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cryptoAdBlock_first__buttons button{
+  outline: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  padding: 4px 8px 4px 4px;
+}
+.cryptoAdBlock_first__buttons button:first-child{
+  background-color: #0EA600;
+  margin-right: 8px;
+}
+.cryptoAdBlock_first__buttons button:last-child{
+  background-color: #FF0002;
+}
+
 @media screen and (max-width: 550px) {
   .container {
     width: 90%;

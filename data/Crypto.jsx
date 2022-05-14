@@ -10,7 +10,6 @@ export function cryptoRating(cryptoList, serverData, setCryptoServerData, setIsC
     serverData = serverData.data.filter(item => cryptoList.indexOf(item.symbol) != -1)
     const tables = []
     serverData.forEach(item => {
-        console.log(item)
         const itemData = isMobile ? [
             item.name,
             `${parseInt(item.priceUsd)} $`,

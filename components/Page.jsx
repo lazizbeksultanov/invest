@@ -13,7 +13,7 @@ const Page = ({title, children}) => {
         {href: '/', label: 'Индексные фьючерсы'},
         {href: '/invest', label: 'Форекс'},
         {href: '/commodities', label: 'Сырьевые товары'},
-        {href: '/', label: 'Криптовалюты'},
+        {href: '/crypto', label: 'Криптовалюты'},
         {href: '/stock', label: 'Акции'},
         {href: '/bond', label: 'Облигации'},
         {href: '/etfs', label: 'ETF'},
