@@ -4,7 +4,7 @@ import styles from '../styles/Menu.module.scss'
 export default function Menu(links) {
 
     return(
-        <div className="container">
+        <div className="">
             <nav className={styles.menu__nav}>
                 {links ?
                     links.links.map(link => (
