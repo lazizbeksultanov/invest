@@ -42,6 +42,36 @@ export default function Bond() {
         return () => cleanupFunction = true
     }, [isMobile])
 
+    const localTableData = [
+        {
+            name: "Золото",
+            options: [
+                "+5%",
+                "+5%",
+                "+5%",
+                "+5%",
+            ]
+        },
+        {
+            name: "Золото",
+            options: [
+                "+5%",
+                "+5%",
+                "+5%",
+                "+5%",
+            ]
+        },
+        {
+            name: "Золото",
+            options: [
+                "+5%",
+                "+5%",
+                "+5%",
+                "+5%",
+            ]
+        },
+    ]
+
 
     return(
         <Page title="Сырьевые товары">
@@ -62,14 +92,9 @@ export default function Bond() {
                                 <Table
                                     width={isMobile ? '40%' : '20%'}
                                     className={styles.maxwidth} type={isMobile ? '' : '1'}
-                                    columns={isMobile ? ['пара', 'цена', 'изменение'] : ['пара', 'цена', 'изменение', 'изменение %']}
-                                    tables={isValuteDataLoading ? isMobile ? [
-                                                ['usd/rub', '???', '-?? %']
-                                            ]
-                                            : [
-                                                ['usd/rub', '???', '-?? ₽', '-?? %']
-                                            ]
-                                        : valuteServerData} />
+                                    fake={true}
+                                    columns={isMobile ? ['Товар', '1час', '1день'] : ['Товар', '1неделя', '1месяц', 'YTD', '3года']}
+                                    tables={localTableData} />
                             </Block>
                         </Block>
                     </Block>
@@ -88,14 +113,9 @@ export default function Bond() {
                         <Table
                             width={isMobile ? '40%' : '20%'}
                             className={styles.maxwidth} type={isMobile ? '' : '1'}
-                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
-                            tables={isValuteDataLoading ? isMobile ? [
-                                        ['usd/rub', '???', '-?? %']
-                                    ]
-                                    : [
-                                        ['usd/rub', '???', '-?? ₽', '-?? %']
-                                    ]
-                                : valuteServerData} />
+                            fake={true}
+                            columns={isMobile ? ['Товар', '1час', '1день'] : ['Товар', '1неделя', '1месяц', 'YTD', '3года']}
+                            tables={localTableData} />
                     </Block>
                     <Block>
                         <h2 className="title">Металлы</h2>
@@ -103,14 +123,9 @@ export default function Bond() {
                         <Table
                             width={isMobile ? '40%' : '20%'}
                             className={styles.maxwidth} type={isMobile ? '' : '1'}
-                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
-                            tables={isValuteDataLoading ? isMobile ? [
-                                        ['usd/rub', '???', '-?? %']
-                                    ]
-                                    : [
-                                        ['usd/rub', '???', '-?? ₽', '-?? %']
-                                    ]
-                                : valuteServerData} />
+                            fake={true}
+                            columns={isMobile ? ['Товар', '1час', '1день'] : ['Товар', '1неделя', '1месяц', 'YTD', '3года']}
+                            tables={localTableData} />
                     </Block>
                     <Block>
                         <h2 className="title">Сельское хозяйство</h2>
@@ -118,14 +133,9 @@ export default function Bond() {
                         <Table
                             width={isMobile ? '40%' : '20%'}
                             className={styles.maxwidth} type={isMobile ? '' : '1'}
-                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
-                            tables={isValuteDataLoading ? isMobile ? [
-                                        ['usd/rub', '???', '-?? %']
-                                    ]
-                                    : [
-                                        ['usd/rub', '???', '-?? ₽', '-?? %']
-                                    ]
-                                : valuteServerData} />
+                            fake={true}
+                            columns={isMobile ? ['Товар', '1час', '1день'] : ['Товар', '1неделя', '1месяц', 'YTD', '3года']}
+                            tables={localTableData} />
                     </Block>
                     <Block>
                         <h2 className="title">Сырьевые индексы</h2>
@@ -133,14 +143,9 @@ export default function Bond() {
                         <Table
                             width={isMobile ? '40%' : '20%'}
                             className={styles.maxwidth} type={isMobile ? '' : '1'}
-                            columns={isMobile ? ['название', 'цена', 'изменение'] : ['название', 'цена', 'изменение', 'изменение %', 'ВРЕМЯ']}
-                            tables={isValuteDataLoading ? isMobile ? [
-                                        ['usd/rub', '???', '-?? %']
-                                    ]
-                                    : [
-                                        ['usd/rub', '???', '-?? ₽', '-?? %']
-                                    ]
-                                : valuteServerData} />
+                            fake={true}
+                            columns={isMobile ? ['Товар', '1час', '1день'] : ['Товар', '1неделя', '1месяц', 'YTD', '3года']}
+                            tables={localTableData} />
                     </Block>
                 </>
 
